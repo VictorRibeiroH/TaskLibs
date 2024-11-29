@@ -16,7 +16,6 @@ const Navbar = () => {
                     />
                 </div>
             </div>
-
             {/* Icones */}
             <div className="flex items-center">
                 <Link
