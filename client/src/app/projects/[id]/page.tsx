@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState } from 'react'
+
 import ProjectHeader from '@/app/projects/ProjectHeader';
+import ModalNewTask from '@/components/ModalNewTask';
+
 import Board from '../BoardView';
 import List from '../ListView'
 import TimelineView from '../TimelineView';
@@ -21,7 +24,11 @@ const Project = ({params}: Props) => {
 
   return (
     <div>
-        {/* New Task Modal */}
+        <ModalNewTask
+            isOpen={isModalNewTaskOpen}
+            onClose={() => setIsModalNewTaskOpen(false)}
+            id={id}
+        />
         <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
         { activeTab === "Board" && (
             <Board id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
