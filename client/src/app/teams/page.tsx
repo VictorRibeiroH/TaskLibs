@@ -35,7 +35,7 @@ const Teams = () => {
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError || !teams) return <div>Error fetching teams</div>;
+  if (isError || !teams) return <div>Erro ao carregar times :/</div>;
 
   return (
     <div className="flex w-full flex-col p-8">
