@@ -42,17 +42,17 @@ const Search = () => {
         </div>
         <div className='p-5'>
             {isLoading && <p>Carregando...</p>}
-            {isError && <p>Algum erro aconteceu ao pesquisar :/</p>}
+            {isError && <p>Algum erro aconteceu ao pesquisar ..</p>}
             {!isLoading && !isError && searchResults && (
                 <div>
-                    {searchResults.users && searchResults.tasks?.length > 0 && (
+                    {searchResults.tasks && searchResults.tasks?.length > 0 && (
                         <h2>Tasks</h2>
                     )}
                      {searchResults.tasks?.map((task) => (
                         <TaskCard key={task.id} task={task} />
                      ))}
 
-                    {searchResults.users && searchResults.projects?.length > 0 && (
+                    {searchResults.projects && searchResults.projects?.length > 0 && (
                         <h2>Projetos</h2>
                     )}
                      {searchResults.projects?.map((project) => (
