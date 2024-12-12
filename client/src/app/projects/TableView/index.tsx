@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/app/redux';
 import Header from '@/components/Header';
-import { dataGridClassNames, dataGridSxStlyes } from '@/lib/utils';
+import { dataGridClassNames, dataGridSxStyles } from '@/lib/utils';
 import { useGetTasksQuery } from '@/state/api';
 import {DataGrid, GridColDef} from "@mui/x-data-grid"
 import React from 'react'
@@ -55,13 +55,13 @@ const columns: GridColDef[] = [
         field: "author",
         headerName: "Autor",
         width: 150,
-        renderCell: (params) => params.value.username || "Unknown"
+        renderCell: (params) => params.value?.author || "Unknown"
     },
     {
         field: "assignee",
         headerName: "Adminstrador",
         width: 150,
-        renderCell: (params) => params.value.username || "Sem Admin"
+        renderCell: (params) => params.value?.assignee || "Sem Admin"
     },
 ]
 
@@ -93,7 +93,7 @@ const TableView = ({ id, setIsModalNewTaskOpen}: Props) => {
                 rows={tasks || []}
                 columns={columns}
                 className={dataGridClassNames}
-                sx={dataGridSxStlyes(isDarkMode)}
+                sx={dataGridSxStyles(isDarkMode)}
             />
         </div>
     )
